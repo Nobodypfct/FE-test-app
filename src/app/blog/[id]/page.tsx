@@ -1,5 +1,9 @@
 import { getPostById, getPosts } from '@/src/lib/api/posts'
 import type { Post } from '@/src/types/blog/post'
+import { notFound } from 'next/navigation'
+
+export const revalidate = 3600
+export const dynamicParams = true
 
 export async function generateStaticParams() {
   const posts = await getPosts()
@@ -12,6 +16,7 @@ export async function generateStaticParams() {
 export default async function BlogPostPage({ params }: { params: { id: string } }) {
   const { id } = await params
   const post = await getPostById(id)
+  if (!post) notFound()
 
   return (
     <article className="max-w-3xl mx-auto py-12 px-6">

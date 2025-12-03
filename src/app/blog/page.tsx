@@ -1,6 +1,9 @@
 import { PostCard } from '@/src/components/features/blog/PostCard'
 import { getPosts } from '@/src/lib/api/posts'
 
+export const revalidate = 3600
+export const dynamic = 'force-static'
+
 export const metadata = {
   title: 'Blog',
 }
