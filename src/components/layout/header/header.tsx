@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { HeaderAuthControls } from '../../auth/header-auth-controls'
 
 export function Header() {
   return (
@@ -10,7 +11,7 @@ export function Header() {
           <h1 className="text-xl font-semibold">sup?</h1>
         </Link>
 
-        <nav className="flex gap-4 text-sm">
+        <nav className="flex gap-4 text-sm items-center">
           <Link href="/blog" className="hover:text-accent-pink transition">
             Blog
           </Link>
@@ -20,6 +21,8 @@ export function Header() {
           <Link href="/features" className="hover:text-accent-pink transition">
             Features
           </Link>
+
+          <HeaderAuthControls />
         </nav>
       </div>
     </header>

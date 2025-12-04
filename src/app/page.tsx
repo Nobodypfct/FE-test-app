@@ -1,6 +1,6 @@
 import '@radix-ui/themes/styles.css'
 import Link from 'next/link'
-import { Button } from '../components/ui/Button'
+import { HomeLoginButton } from '../components/auth/home-login-button'
 
 export default function Home() {
   return (
@@ -16,13 +16,12 @@ export default function Home() {
           projects
         </Link>
 
-        <Link href="/about" className="hover:underline">
-          about me
+        <Link href="/dashboard" className="hover:underline">
+          dashboard
         </Link>
       </nav>
-      <div className="mt-8">
-        <Button>example btn</Button>
-      </div>
+
+      <HomeLoginButton />
     </div>
   )
 }

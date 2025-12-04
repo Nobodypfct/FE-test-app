@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AppProviders>
           <div className="grid grid-rows-[auto_1fr_auto] h-full">
             <Header />
-            <main className="min-h-0">{children}</main>
+            <main className="min-h-0 overflow-y-scroll">{children}</main>
             <Footer />
           </div>
         </AppProviders>
